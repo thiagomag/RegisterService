@@ -7,8 +7,7 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 
-import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,22 +16,19 @@ import java.util.List;
 @EqualsAndHashCode
 @ToString
 @Builder
-@Table(name = "pacientes")
-public class Paciente {
+@Table(name = "consulta")
+public class Consultation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String cpf;
-    private LocalDate dataNascimento;
-    private String genero;
-    private String endereco;
-    private String telefone;
-    private String email;
-    private String tipoSanguineo;
-    private String alergias;
-    private String condicoesPreexistentes;
+
+    private LocalDateTime date;
+    private String professionalResponsible;
+    private String diagnostic;
+    private String treatment;
+    private String observations;
+    private Long patientId;
     @Transient
-    private List<Consulta> consultas;
+    private Patient patient;
 }
