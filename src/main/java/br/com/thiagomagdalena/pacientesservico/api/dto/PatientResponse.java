@@ -27,15 +27,15 @@ import java.util.List;
 public class PatientResponse {
 
     private Long id;
-    private String nome;
+    private String name;
     private String cpf;
-    private LocalDate dataNascimento;
-    private String genero;
-    private String endereco;
-    private String telefone;
+    private LocalDate birthDate;
+    private String gender;
+    private PatientAddressResponse patientAddress;
+    private String telephone;
     private String email;
-    private String tipoSanguineo;
-    private String alergias;
-    private String condicoesPreexistentes;
+    private String bloodType;
+    private String alergies;
+    private String preExistingConditions;
     private List<Consultation> consultations;
 }
