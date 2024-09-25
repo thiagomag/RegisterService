@@ -13,16 +13,15 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
 @Builder
 @Table(name = "consulta")
-public class Consultation {
+public class Consultation extends BaseEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private LocalDateTime date;
     private String professionalResponsible;
     private String diagnostic;

@@ -16,11 +16,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @ToString
 @Builder
 @Table(name = "address")
-public class PatientAddress {
+public class PatientAddress extends BaseEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
