@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: PacientesServico
+  r2dbc:
+    url: r2dbc:pool:postgresql://postgres:postgres@localhost:5434/clientes
+    password: postgres
+    username: postgres
