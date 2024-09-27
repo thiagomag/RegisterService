@@ -3,7 +3,7 @@ name: CI/CD Pipeline with Docker Compose
 on:
   push:
     branches:
-      - main  # Build automático ao enviar código para a branch "main"
+      - master  # Build automático ao enviar código para a branch "master"
   workflow_dispatch:  # Deploy manual
 
 jobs:
