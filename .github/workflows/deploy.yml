@@ -3,7 +3,7 @@ name: CI/CD Pipeline with Docker Compose
 on:
   push:
     branches:
-      - main  # Build automático ao enviar código para a branch "main"
+      - master  # Build automático ao enviar código para a branch "master"
   workflow_dispatch:  # Deploy manual
 
 jobs:
@@ -34,8 +34,9 @@ jobs:
 
       # Step 4: Build and Run with Docker Compose
       - name: Build and Run with Docker Compose
-        run: docker-compose -f docker-compose.yml up -d --build
-             docker-compose -f docker-compose.yml push
+        run: |
+          docker-compose -f docker-compose.yml up -d --build
+          docker-compose -f docker-compose.yml push
 
   deploy:
     runs-on: ubuntu-latest
