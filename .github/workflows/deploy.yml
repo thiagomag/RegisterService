@@ -23,7 +23,7 @@ jobs:
 
       # Step 2: Build com Gradle usando o JDK 21
       - name: Build with Gradle
-        run: ./gradlew build
+        run: chmod +x ./gradlew && ./gradlew build
 
       # Step 3: Build imagem docker com docker-compose
       - name: Build Docker Compose services
