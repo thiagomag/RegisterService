@@ -21,9 +21,9 @@ jobs:
         with:
           java-version: '21'
 
-      # Step 2: Build com Maven usando o JDK 21
-      - name: Build with Maven
-        run: mvn clean install
+      # Step 2: Build com Gradle usando o JDK 21
+      - name: Build with Gradle
+        run: ./gradlew build
 
       # Step 3: Build imagem docker com docker-compose
       - name: Build Docker Compose services
