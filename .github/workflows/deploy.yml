@@ -32,11 +32,16 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version
 
-      # Step 4: Build and Run with Docker Compose
+      # Step 4: Login no docker hub
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      # Step 5: Build and Run with Docker Compose
       - name: Build and Run with Docker Compose
         run: |
           docker-compose -f docker-compose.yml up -d --build
           docker-compose -f docker-compose.yml push
+
 
   deploy:
     runs-on: ubuntu-latest
